@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="main.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <title>FizzBuzz</title>
+</head>
+<body>
+  <h1>lesson-01_basics-numbers / before</h1>
+  <p>Codewars задачи:</p>
+  <ul>
+      <li><a href="https://www.codewars.com/kata/reviews/568d4ea6ab0a10c7210000f2/groups/5c1e5f91ded502340200058f" target="_blanc">Transportation on vacation</a></li>
+      <li><a href="https://www.codewars.com/kata/reviews/57357409555270d3f000001b/groups/5737a549fe240ac69f001777" target="_blanc">Basic Mathematical Operations</a></li>
+  </ul>
+  
+  <p>3 задачи:</p>
+  <ul>
+    <li><a href="#" id="t1lnk" class = "case"  data-field="t1">Задание 1 - (Повторять цикл, пока ввод неверен)</a></li>
+    <li><a href="#" id="t2lnk" class = "case"  data-field="t2">Задание 2 - (Вывести простые числа)</a></li>
+    <li><a href="#" id="t3lnk" class = "case"  data-field="t3">Задание 3 - (FizzBuzz)</a></li>
+  </ul>
+
+<div id="t1" class="solution hidden">
+  <h1>Задание 1 - (Повторять цикл, пока ввод неверен)</h1>
+  <p>Напишите цикл, который предлагает (prompt) ввести число, большее 100. Если посетитель ввел не верное число — попросить ввести еще раз, и так далее. Цикл должен спрашивать число пока либо посетитель не введет число, большее 100, либо не нажмет кнопку Cancel (ESC). Предполагается, что посетитель вводит только числа, предусматривать обработку нечисловых строк в этой задаче необязательно.</p>
+  <button class="submit" data-field="submitTest1">Запустить скрипт.</button>
+</div>
+
+<div id="t2" class="solution hidden">
+    <h1>Задание 2 - (Вывести простые числа)</h1>
+    <p>Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1. Другими словами, n>1 – простое, если при делении на любое число от 2 до n-1 есть остаток. Создайте функцию, которая выводит все простые числа из интервала от 2 до n. Для n=10 => Результат должен быть: 2,3,5,7.</p>
+    <button class="submit" data-field="submitTest2">Запустить скрипт.</button>
+    <div id="answers"></div>
+</div>
+
+<div id="t3" class="solution hidden">
+    <h1>Откройте консоль разработчика для решения задачи</h1>
+    <p>Напишите программу, которая выводит через console.log все числа от 1 до 100, с двумя исключениями.</p>
+    <ul>
+      <li>Для чисел, нацело делящихся на 3, она должна выводить ‘Fizz’</li>
+      <li>для чисел, делящихся на 5 (но не на 3) – ‘Buzz’</li>
+      <li>если число делится и на 3 и на 5, то вывести ‘FizzBuzz’</li>
+    </ul>
+    <button class="submit" data-field="submitTest3">Запустить скрипт.</button>
+</div>
+
+
+</body>
+</html>
