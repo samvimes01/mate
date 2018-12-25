@@ -1,0 +1,109 @@
+body {
+    margin: 0%;
+    padding: 0%
+}
+header, footer {
+    padding: 10px;
+}
+
+header{
+    background: linear-gradient(180deg, #ccc, #f2f2f2);
+}
+
+footer{
+    background: linear-gradient(0deg, #ccc, #f2f2f2);
+}
+
+#title {
+    margin: 0%;
+    padding: 0%; 
+    font: 48pt 'Allerta Stencil', sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    background-color: #f2f2f2;
+}
+
+form {
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 92%);
+    padding: 20px;
+    margin: 0 10%;
+}
+
+fieldset {
+    border-radius: 8px;
+    border: 2px solid hsl(207, 70%, 65%);
+    padding:20px 20px 20px;
+}
+
+
+input[type=radio] {
+    margin-left: 30px;
+}
+
+textarea {
+    resize: none;
+}
+
+#submit {
+    width: 100%;
+    background-color: hsl(207, 70%, 65%);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: hsl(207, 70%, 60%);
+}
+
+label{
+    display: inline-block;
+    margin-top:8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.6)
+}
+
+.form-control:hover {
+    border: 1px solid hsl(207, 70%, 65%);
+}
+
+.invalid {
+    border: 1px solid hsl(342, 70%, 65%);
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    width  : 40%;
+    padding: 0;
+    margin-left: 10px;
+    display: block;
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+   
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }
