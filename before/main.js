@@ -82,7 +82,7 @@ window.onload = function(){
   function fizzbuzz() {
     let i = 0;
     while(i++ < 100) {
-      if ( i % 5 == 0 && i % 5 == 0 ) {
+      if ( i % 5 == 0 && i % 3 == 0 ) {
         console.log('FizzBuzz');
       } else if ( i % 3 == 0 ) {
         console.log('Fizz');
