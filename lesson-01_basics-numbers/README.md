@@ -1,10 +1,11 @@
 # Solution of the lesson-01_basics-numbers/before and fs-program/lesson_0/2.2 Markdown
 
-В решении содержатся ссылки на задачи 
+В решении содержатся ссылки на задачи
+
 1. [Transportation on vacation](https://www.codewars.com/kata/transportation-on-vacation)
 2. [Basic Mathematical Operations](https://www.codewars.com/kata/basic-mathematical-operations)
 
-И решение для 3х нижеперечисленных задач. 
+И решение для 3х нижеперечисленных задач.
 Для отображения задачи нажмите на ее название, а потом на кнопку **Запустить скрипт**
 
 Задание 1 - (Повторять цикл, пока ввод неверен)

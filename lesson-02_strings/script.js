@@ -35,6 +35,9 @@ window.onload = function(){
         case 'submitTest2':
             alert('RLE: ' + rle(prompt('Строка для проверки RLE', 'AVVVBBBVVXDHJFFFFDDDDDDHAAAAJJJDDSLSSSDDDD')));
             break;
+        case 'submitTest3':
+            bullsAndCows();
+            break;
         }
     };
   
@@ -83,5 +86,68 @@ window.onload = function(){
         `${convertedString} is not equal to expected ${expectedString}`
     );
     
-    
+    function bullsAndCows() {
+        let secret = generateRandomNumber();
+        let prevResults = '';
+        let bullsCount = 0;
+        let cowsCount;
+
+        let numberString = prompt('Input your number');
+
+        do {
+            bullsCount = getBullsCount(numberString, secret);
+            cowsCount = getCowsCount(numberString, secret);
+
+            prevResults += numberString + ' => bulls: ' + bullsCount + '  cows: ' + cowsCount + '\n';
+
+            numberString = prompt(prevResults);
+            if (!validateInput(numberString)) {
+                numberString = validateInput(prompt('Only 4 digits number'));  
+            }
+        } while (numberString && bullsCount != 4); 
+    }
+
+    function generateRandomNumber() {
+        let result = '';
+        let a = 0;
+        do {
+            a = Math.floor(Math.random() * 10) + '';
+            if (result.indexOf(a)  == -1) result += a;
+      
+        } while (result.length < 4);
+        console.log(result);
+        return result;
+    }
+      
+    function validateInput(number) {
+        return (number.length == 4 && isFinite(number)); 
+    }
+      
+      
+    function getBullsCount(numberString, secret) {
+        let count = 0;
+      
+        for (let i = 0; i < numberString.length; i++) {
+            if (numberString[i] === secret[i]) {
+                count += 1;
+            }
+        }
+      
+        return count;
+    }
+      
+    function getCowsCount(numberString, secret) {
+        let count = 0;
+      
+        for (let i = 0; i < numberString.length; i++) {
+            let position = secret.indexOf(numberString[i]);
+      
+            if (position !== -1 && position !== i) {
+                count += 1;
+            }
+        }
+      
+        return count;
+    }
+      
 };
