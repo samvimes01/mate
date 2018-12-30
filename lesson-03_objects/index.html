@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/script.js" defer></script>
+  </head>
+
+  <body>
+    <h1>Разные задачи с javascript.ru</h1>
+
+    <h2>Внешние ссылки подсветить желтым, добавив класс</h2>
+    <button class="submit" data-field="yellow">Запустить скрипт.</button>
+    <div id = "yellow" class="solution hidden">
+      <a name="list">список</a>
+      <ul>
+        <li><a href="http://google.com">http://google.com</a></li>
+        <li><a href="/tutorial">/tutorial.html</a></li>
+        <li><a href="local/path">local/path</a></li>
+        <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+        <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+        <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+      </ul>
+    </div>
+
+    <h2>Создайте дерево ul / li из объекта (а по клику на заголовок скрывает-показывает детей)</h2>
+    <button class="submit" data-field="tree">Запустить скрипт.</button>
+    <div id = "tree" class="solution hidden">
+      <p>Результат должен быть таким:</p>
+        <ul>
+          <li><span class="slidingList">Рыбы</span>
+            <ul>
+              <li>Форель</li>
+              <li>Щука</li>
+            </ul>
+          </li>
+          <li><span class="slidingList">Деревья</span>
+            <ul>
+              <li><span class="slidingList">Хвойные</span>
+                <ul>
+                  <li>Лиственница</li>
+                  <li>Ель</li>
+                </ul>
+              </li>
+              <li><span class="slidingList">Цветковые</span>
+                <ul>
+                  <li>Берёза</li>
+                  <li>Тополь</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <p>Результат:</p>
+    </div>
+
+    <h2>Создать календарь в виде таблицы</h2>
+    <input type="date" id="dateInp">
+    <button class="submit" data-field="calendar">Запустить скрипт.</button>
+    <div id = "calendar" class="solution hidden">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+/* Add your styles here */
+:root {
+  --green-ds-border: dashed 1px green;
+}
+.external {
+  background-color: yellow
+}
+
+.hidden {
+  display: none;
+}
+
+h2 { 
+  margin: 30px 0px 5px 0px;
+}
+
+p { 
+  margin: 5px 0px;
+}
+
+.solution {
+  margin: 5px;
+  border-top: var(--green-ds-border);
+  border-bottom: var(--green-ds-border);
+}
+
+.slidingList {
+  cursor: pointer;
+}
+.slidingList:hover {
+  font-weight: bold;
+}
+
+.month {
+  margin: 5px;
+  border: solid 1px blue;
+}
+
+.month > thead, tfoot {
+  background: rgb(106, 194, 252);
+}
+
+.month > tbody > tr {
+  background: rgb(206, 236, 255);
+}
