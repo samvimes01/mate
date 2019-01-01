@@ -2,7 +2,7 @@
   "name": "mateacademy.fs.on.dec.18.oleksandr",
   "version": "1.0.0",
   "description": "Solutions for Mate's lessons tasls",
-  "main": "index.js",
+  "main": "index.html",
   "directories": {
     "test": "test"
   },
