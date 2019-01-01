@@ -19,6 +19,10 @@
 
   4 CalendarTable
     Создать календарь в виде таблицы  
+
+  5 Sort table
+    Сделать сортировку таблицы при клике на заголовок.
+ 
 */
 
 /* 
@@ -77,6 +81,9 @@ function checkSubmit(event) {
     createCalendar(solutionDivElement, dt.getFullYear(), dt.getMonth());
     break;  
 
+  case 'tableSort':
+    tableListeners();
+    break; 
   }
 }
   
@@ -179,4 +186,60 @@ function createCalendar(solutionDivElement, year, month) {
   td.innerHTML = monthLb;
 
   solutionDivElement.appendChild(table);
+}
+
+// 5 задача
+function tableListeners() {
+  const columns = document.querySelector('#grid >thead').querySelectorAll('th');
+  for (let i = 0; i < columns.length; i++) {
+    columns[i].addEventListener('click', tableSort);
+  }
+}
+
+function tableSort(event) {
+  const colType = event.target.dataset.type;
+  const table = document.querySelector('#grid > tbody');
+  const rows = table.querySelectorAll('tr');
+  const columns = document.querySelector('#grid >thead').querySelectorAll('th');
+  let colArr = [];
+  let tblData = [];
+  let sortCol;
+
+  Object.keys(columns).forEach(th => colArr.push(columns[th].dataset.type));
+  sortCol = colArr.indexOf(colType);
+
+  Object.keys(rows).forEach(tr => {
+    let cells = rows[tr].querySelectorAll('td'); 
+    tblData[tr] = [];
+    Object.keys(cells).forEach(td => tblData[tr].push( cells[td].innerHTML ));
+  });
+
+  switch (colType) {
+  case 'number':
+    tblData.sort((a, b) => a[sortCol] - b[sortCol]);
+    break;
+  case 'string':
+    tblData.sort((a, b) => a[1].localeCompare(b[1]));
+    break;
+  default:
+    tblData.sort();
+    break;
+  }
+
+  table.innerHTML = '';
+
+  tblData.forEach(
+    row => {
+      let tr = document.createElement('tr');
+      row.forEach(
+        cell => {
+          let td = document.createElement('td');
+          td.innerHTML = cell;
+          tr.appendChild(td);
+        }
+      ); 
+      table.appendChild(tr);
+    }
+  );
+
 }

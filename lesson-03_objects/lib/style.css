@@ -3,7 +3,7 @@
   --green-ds-border: dashed 1px green;
 }
 .external {
-  background-color: yellow
+  background-color: yellow;
 }
 
 .hidden {
@@ -42,4 +42,9 @@ p {
 
 .month > tbody > tr {
   background: rgb(206, 236, 255);
+}
+
+thead > tr > th:hover {
+  background-color: yellow;
+  cursor: pointer;
 }

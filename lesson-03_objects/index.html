@@ -9,7 +9,7 @@
   <body>
     <h1>Разные задачи с javascript.ru</h1>
 
-    <h2>Внешние ссылки подсветить желтым, добавив класс</h2>
+    <h2>1. Внешние ссылки подсветить желтым, добавив класс</h2>
     <button class="submit" data-field="yellow">Запустить скрипт.</button>
     <div id = "yellow" class="solution hidden">
       <a name="list">список</a>
@@ -23,7 +23,7 @@
       </ul>
     </div>
 
-    <h2>Создайте дерево ul / li из объекта (а по клику на заголовок скрывает-показывает детей)</h2>
+    <h2>2. Создайте дерево ul / li из объекта (3. а по клику на заголовок скрывает-показывает детей)</h2>
     <button class="submit" data-field="tree">Запустить скрипт.</button>
     <div id = "tree" class="solution hidden">
       <p>Результат должен быть таким:</p>
@@ -54,10 +54,45 @@
       <p>Результат:</p>
     </div>
 
-    <h2>Создать календарь в виде таблицы</h2>
+    <h2>4. Создать календарь в виде таблицы</h2>
     <input type="date" id="dateInp">
     <button class="submit" data-field="calendar">Запустить скрипт.</button>
     <div id = "calendar" class="solution hidden">
+    </div>
+    
+    <h2>5. Сортировка таблицы</h2>
+    <button class="submit" data-field="tableSort">Запустить скрипт.</button>
+    <div id = "tableSort" class="solution hidden">
+      <table id="grid">
+        <thead>
+          <tr>
+            <th data-type="number">Возраст</th>
+            <th data-type="string">Имя</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5</td>
+            <td>Вася</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Петя</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Женя</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Маша</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Илья</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
