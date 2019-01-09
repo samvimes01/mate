@@ -76,7 +76,6 @@ h2 em {
 
 ul {
   height: 130px;
-  width: 9999px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -114,10 +113,6 @@ ul li {
   display: grid;
   grid-template-columns: 30px 390px 30px;
   align-items: center;
-}
-
-#carousel > ul {
-  margin: 5px;
 }
 
 .visible {
