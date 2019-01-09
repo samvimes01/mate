@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./lib/style.css">
+  <script src="./lib/script.js" defer></script>
+  <title>Mate DOM</title>
+</head>
+<body>
+  <h2>Мяч</h2>
+  <p>Кликните на любое место поля, чтобы мяч перелетел туда.
+  <br> Мяч никогда не вылетит за границы поля.</p>
+  <button id="ballToCenter">Мяч в центр</button>
+
+  
+  <div id="field">
+    <img src="https://js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+  </div>
+
+  <h2>Галлерея</h2>
+  <p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image" title="Image 1"></p>
+
+  <div id="thumbs">
+    <!-- При наведении на изображение показывается встроенная подсказка браузера (title) -->
+    <a href="https://js.cx/gallery/img2-lg.jpg" title="Image 2"><img src="https://js.cx/gallery/img2-thumb.jpg"></a>
+    <a href="https://js.cx/gallery/img3-lg.jpg" title="Image 3"><img src="https://js.cx/gallery/img3-thumb.jpg"></a>
+    <a href="https://js.cx/gallery/img4-lg.jpg" title="Image 4"><img src="https://js.cx/gallery/img4-thumb.jpg"></a>
+    <a href="https://js.cx/gallery/img5-lg.jpg" title="Image 5"><img src="https://js.cx/gallery/img5-thumb.jpg"></a>
+    <a href="https://js.cx/gallery/img6-lg.jpg" title="Image 6"><img src="https://js.cx/gallery/img6-thumb.jpg"></a>
+  </div>
+
+
+  <h2>Карусель</h2>
+  <div id="carousel">
+    <button class="arrow" id = "toLeft">⇦</button>
+    <ul>
+      <li><img src="https://js.cx/carousel/1.png"></li>
+      <li><img src="https://js.cx/carousel/2.png"></li>
+      <li><img src="https://js.cx/carousel/3.png"></li>
+      <li><img src="https://js.cx/carousel/4.png"></li>
+      <li><img src="https://js.cx/carousel/5.png"></li>
+      <li><img src="https://js.cx/carousel/6.png"></li>
+      <li><img src="https://js.cx/carousel/7.png"></li>
+      <li><img src="https://js.cx/carousel/8.png"></li>
+      <li><img src="https://js.cx/carousel/9.png"></li>
+      <li><img src="https://js.cx/carousel/10.png"></li>
+    </ul>
+    <button class="arrow" id = "toRight">⇨</button>
+  </div>
+
+</body>
+</html>

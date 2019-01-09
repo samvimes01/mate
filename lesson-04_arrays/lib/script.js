@@ -40,7 +40,7 @@ const btnPal = document.getElementById('palindrome');
 btnPal.addEventListener('click', checkPal);
 
 function palindrome(str) {
-  let arr = Array.from(str).filter(el => el.match(/\w/)).map(el => el.toLowerCase());
+  let arr = Array.from(str).filter(el => el.match(/[\wА-Яа-я]/)).map(el => el.toLowerCase());
   let len = arr.length;
 
   if (len < 2) return true;
