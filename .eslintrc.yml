@@ -6,6 +6,8 @@ globals:
   api: false
   document: true
   alert: true
+  prompt: true
+  window: true
 rules:
   indent:
     - error
@@ -67,7 +69,7 @@ rules:
         function:
           after: false
   max-len:
-    - error
+    - warn
     - code: 100
       ignoreUrls: true
   max-nested-callbacks:
@@ -160,7 +162,7 @@ rules:
   prefer-arrow-callback:
     - error
   prefer-const:
-    - error
+    - warn
   prefer-numeric-literals:
     - error
   prefer-rest-params:

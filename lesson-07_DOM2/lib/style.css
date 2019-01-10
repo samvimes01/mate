@@ -4,20 +4,27 @@
   height: 16px;
   background: #bcc;
   border: 1px solid rgb(137, 165, 165);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #range {
+  height: 16px;
+  margin-left: 6px;
   position: absolute;
-  background: #bbb;
+  background: rgb(167, 204, 204);
 }
 
 .handle {
   position: absolute;
-  top: -3px;
-  height: 20px;
-  width: 20px;
-  background: #bbb;
-  border: 1px solid rgb(114, 111, 111);
-  border-radius: 50%;
+  top: -4px;
+  height: 22px;
+  width: 10px;
+  background: rgb(187, 204, 204);
+  border: 1px solid rgb(137, 165, 165);
+  border-radius: 5px;
+}
+
+.highlight {
+  background: rgb(130, 155, 155);
+  border-color: rgb(86, 113, 143);
 }

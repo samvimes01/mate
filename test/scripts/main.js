@@ -1,4 +1,6 @@
-window.onload=function() {
+/* eslint-disable no-useless-escape */
+'use strict';
+window.onload = function() {
   const submit = document.querySelector('#submit');
   const inputs = document.querySelectorAll('input.form-control, select, textarea');
   const gender = document.querySelectorAll('input[name=gender]');
@@ -25,7 +27,7 @@ window.onload=function() {
     inputs[i].addEventListener('blur', validateInput);
   }
 
-  submit.addEventListener('click', function(e) {
+  submit.addEventListener('click', (e) => {
     e.preventDefault;
     if (validateForm()) alert('Validation passed.');// else alert('Not passed');
   });
@@ -38,7 +40,7 @@ window.onload=function() {
   */
 function checkGender(gender) {
   let valid = false;
-  for (i = 0; i < gender.length; ++ i) {
+  for (let i = 0; i < gender.length; ++i) {
     if (gender[i].checked) {
       valid = true;
       break;
@@ -56,7 +58,7 @@ function checkGender(gender) {
   */
 function checkInput(input) {
   let valid = false;
-  if (input.value == '' && input.hasAttribute('required')) {
+  if (input.value === '' && input.hasAttribute('required')) {
     displayError(input, errorMsg(input, 'empty'));
     valid = false;
   } else if (!checkValidity(input)) {
@@ -74,7 +76,7 @@ function checkInput(input) {
   * @param {string} msg The first number.
   */
 function displayError(input, msg) {
-  if (msg == '') return;
+  if (msg === '') return;
   input.classList.add('invalid');
   input.nextElementSibling.classList.add('active');
   input.nextElementSibling.innerHTML = msg;
@@ -110,11 +112,11 @@ function checkQuotesTextValue(input) {
   * @return {boolean} True if value valid, false if not.
   */
 function checkValidity(input) {
+  const regMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   switch (input.dataset.validation) {
     case 'text':
       return checkQuotesTextValue(input);
     case 'email':
-      const regMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (!regMail.test(input.value)) {
         displayError(input, errorMsg(input, 'mail'));
         return false;
@@ -147,14 +149,14 @@ function checkValidity(input) {
 function errorMsg(input, err) {
   const fieldNames = ['first_name', 'last_name', 'birthday', 'gender', 'country', 'email', 'password', 'address', 'notes'];
   const ind = fieldNames.indexOf(input.name);
-  if ( ind >= 0 ) input = fieldNames[ind].charAt(0).toUpperCase() + fieldNames[ind].slice(1).replace('_', ' ');
+  if (ind >= 0) input = fieldNames[ind].charAt(0).toUpperCase() + fieldNames[ind].slice(1).replace('_', ' ');
   else input = input.name;
   switch (err) {
     case 'empty':
-      err = input + ' is ' + 'required';
+      err = input + ' is required';
       break;
     case 'quotes':
-      err = input + ' is ' + 'not valid because of qoutes';
+      err = input + ' is not valid because of qoutes';
       break;
     case 'mail':
       err = 'Email address is not valid ';
@@ -163,7 +165,7 @@ function errorMsg(input, err) {
       err = 'Password must be greater than 8 symbols';
       break;
     case 'notvalid':
-      err = input + ' is ' + 'not valid';
+      err = input + ' is not valid';
       break;
     default:
       err = '';
