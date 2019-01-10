@@ -5,6 +5,7 @@ extends: 'eslint:recommended'
 globals:
   api: false
   document: true
+  alert: true
 rules:
   indent:
     - error

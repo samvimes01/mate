@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/script.js" defer></script>
+  </head>
+
+  <body>
+    <h2>Range slider</h2>
+    <label for="min">Min: </label>
+    <input id="min">
+    <br><br>
+    <label for="max">Max: </label>
+    <input id="max">
+
+    <div id="slider-range">
+      <div id="range" style="left: 0%; width: 42.2%;"></div>
+      <span id="left-handle" class="handle" draggable="true"></span>
+      <span id="right-handle" class="handle" style="left: 42.2%;"></span>
+    </div>
+  </body>
+</html>

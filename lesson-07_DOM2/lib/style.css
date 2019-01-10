@@ -1,0 +1,23 @@
+#slider-range{
+  margin-top: 20px;
+  position: relative;
+  height: 16px;
+  background: #bcc;
+  border: 1px solid rgb(137, 165, 165);
+  border-radius: 5px;
+}
+
+#range {
+  position: absolute;
+  background: #bbb;
+}
+
+.handle {
+  position: absolute;
+  top: -3px;
+  height: 20px;
+  width: 20px;
+  background: #bbb;
+  border: 1px solid rgb(114, 111, 111);
+  border-radius: 50%;
+}
