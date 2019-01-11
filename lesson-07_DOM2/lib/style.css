@@ -1,27 +1,28 @@
 #slider-range{
-  margin-top: 20px;
+  margin: 20px 5px;
   position: relative;
   height: 16px;
+  width:700px;
   background: #bcc;
-  border: 1px solid rgb(137, 165, 165);
-  border-radius: 10px;
+  border: 0px solid rgb(137, 165, 165);
 }
 
 #range {
   height: 16px;
-  margin-left: 6px;
+  margin-left: 5px;
   position: absolute;
-  background: rgb(167, 204, 204);
+  background: rgb(54, 165, 165);
 }
 
 .handle {
   position: absolute;
   top: -4px;
   height: 22px;
-  width: 10px;
+  width: 8px;
   background: rgb(187, 204, 204);
   border: 1px solid rgb(137, 165, 165);
   border-radius: 5px;
+  opacity:0.6;
 }
 
 .highlight {
