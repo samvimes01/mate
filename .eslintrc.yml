@@ -19,7 +19,7 @@ rules:
         const: 3
       MemberExpression: 1
   linebreak-style:
-    - error
+    - 0
     - unix
   quotes:
     - error
@@ -148,7 +148,7 @@ rules:
   arrow-spacing:
     - error
   no-confusing-arrow:
-    - error
+    - 0
     - allowParens: true
   no-useless-computed-key:
     - error

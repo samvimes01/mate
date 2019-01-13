@@ -1,0 +1,70 @@
+body {
+  margin: 40px;
+}
+
+#scoreboard, #restart {
+  width: 320px;
+  height: 60px;
+  background: rgb(195, 228, 255);
+  color: #444;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#scoreboard > h3 {
+  color: green;
+}
+
+#restart > span {
+  font-size: 1.5em;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#field {
+  width: 320px;
+  height: 320px;
+  background: rgb(195, 228, 255);
+  color: #444;
+  display: inline-grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 10px;
+}
+
+.cell {
+  background: rgb(91, 180, 253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+#restart, #scoreboard > p, .cell > span {
+  text-transform: capitalize;
+}
+
+.cell:hover {
+  border: 1px solid black;
+}
+
+#restart > span:hover, .vs:hover {
+  font-weight: bold;
+}
+
+.vs {
+  margin: 5px;
+  padding: 5px;
+  width: 80px;
+  background:  rgb(91, 180, 253);
+  display: inline-block;
+}
+
+.vs:hover {
+  background:  rgb(70, 180, 253);
+  cursor: pointer;
+}
