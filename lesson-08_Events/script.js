@@ -33,7 +33,9 @@ restartBtn.addEventListener('click', restart);
 scoreboard.addEventListener('click', start);
 
 function start(event) {
-  reset();
+  if (event.target !== scoreboard) {
+    reset();
+  }
   if (event.target.id === 'hum') {
     isPcPlay = false;
     win = false;
