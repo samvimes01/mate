@@ -21,7 +21,7 @@ const winsVariantsForEachCell = [
   [[6, 8], [1, 4]],
   [[0, 4], [2, 5], [6, 7]]
 ];
-let win = false;
+let win = true;
 let isPcPlay = true;
 
 const scoreboard = document.querySelector('#scoreboard');
@@ -36,11 +36,15 @@ function start(event) {
   reset();
   if (event.target.id === 'hum') {
     isPcPlay = false;
+    win = false;
   } else if (event.target.id === 'pc') {
     scoreboard.innerHTML = `    <span>First move: </span><span class="vs" id="pc1">PC</span>
         <span class="vs" id="hum1">Human</span>`;
   } else if (event.target.id === 'pc1') {
+    win = false;
     moveFromPc();
+  } else if (event.target.id === 'hum1') {
+    win = false;
   }
 }
 function setPlayerMove(event) {
@@ -109,7 +113,7 @@ function restart() {
   scoreboard.innerHTML = `    <span class="vs" id="hum">VS Human</span>
       <span class="vs" id="pc">VS PC</span>`;
   player = true;
-  win = false;
+  win = true;
   isPcPlay = true;
   for (let cell of field.childNodes) {
     cell.textContent = '';
