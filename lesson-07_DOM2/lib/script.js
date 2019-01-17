@@ -9,6 +9,8 @@ const max = document.querySelector('#max');
 
 manageRange();
 
+slider.addEventListener('click', rangeClick);
+
 min.addEventListener('input', setInputToRange);
 max.addEventListener('input', setInputToRange);
 
@@ -36,7 +38,7 @@ function handleMousedown(event) {
 
   function handleMousemove(event) {
 
-    const shiftX = event.clientX - slider.clientLeft - slider.getBoundingClientRect().left - handle.clientWidth / 2;
+    const shiftX = event.clientX - slider.clientLeft - slider.getBoundingClientRect().left - handle.offsetWidth / 2;
 
     let newLeft = shiftX;
 
@@ -51,7 +53,7 @@ function handleMousedown(event) {
     }
 
     handle.style.left = newLeft + 'px';
-
+    handle.children[0].textContent = tooltip(handle);
     manageRange();
   }
 
@@ -73,8 +75,10 @@ rightHandle.ondragstart = function() {
 
 function highlight(event) {
   event.target.classList.add('highlight');
+  event.target.children[0].textContent = tooltip(event.target);
 }
 function deHighlight(event) {
+  event.target.children[0].textContent = '';
   event.target.classList.remove('highlight');
 }
 
@@ -92,8 +96,8 @@ function manageRange() {
 function setRangeToInput() {
   const minVal = parseInt(range.style.left) / (slider.clientWidth - leftHandle.offsetWidth) * 100;
   const maxVal = (parseInt(range.style.width) + parseInt(range.style.left)) / (slider.clientWidth - leftHandle.offsetWidth) * 100;
-  min.value = Math.round(minVal);
-  max.value = Math.round(maxVal);
+  min.value = minVal > 0 ? Math.round(minVal) : 0;
+  max.value = maxVal > 100 ? 100 : Math.round(maxVal);
 }
 
 function setInputToRange() {
@@ -120,4 +124,26 @@ function setInputToRange() {
   rightHandle.style.left = Math.round(right) + 'px';
 
   manageRange();
+}
+
+
+function tooltip(handle) {
+  if (handle.getBoundingClientRect().left < range.getBoundingClientRect().left) return min.value;
+  return max.value;
+}
+
+function rangeClick(event) {
+
+  let clickX = event.clientX - slider.clientLeft - slider.getBoundingClientRect().left - leftHandle.offsetWidth / 2;
+
+  let distanceL = Math.abs(clickX - leftHandle.getBoundingClientRect().left);
+  let distanceR = Math.abs(clickX - rightHandle.getBoundingClientRect().left);
+
+  if (distanceL < distanceR) {
+    leftHandle.style.left =  clickX + 'px';
+  } else {
+    rightHandle.style.left =  clickX + 'px';
+  }
+  manageRange();
+
 }

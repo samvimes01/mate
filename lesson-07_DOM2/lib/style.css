@@ -25,6 +25,13 @@
   opacity:0.6;
 }
 
+.handle > span {
+  position: absolute;
+  top: -20px;
+  left: -5px;
+  user-select: none;
+}
+
 .highlight {
   background: rgb(130, 155, 155);
   border-color: rgb(86, 113, 143);
