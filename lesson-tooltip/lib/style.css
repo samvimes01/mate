@@ -1,0 +1,36 @@
+body {
+  cursor: default;
+  margin: 0px;
+}
+
+.tooltipHandler {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipHandler .tooltip {
+  visibility: hidden;
+  width: 160px;
+  height: 20px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+}
+
+.tooltipHandler .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent;
+}
+
+.visible {
+  visibility: visible;
+}

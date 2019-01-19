@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="lib/style.css">
+	<script src="lib/script.js" defer></script>
+</head>
+
+<body>
+	<div>
+		<h1 id="sticky-tooltip">Sticky tooltip</h1>
+		  <input id="input"> throttle(updateTooltip, 500) для котроля
+
+		<p>Main goal:</p>
+		<ul>
+			<li>Tooltip should show current mouse position (x:, y:)</li>
+			<li>tooltips arrow should be placed at current mouse position;</li>
+			<li>if mouse is not moving tooltip should not be updated</li>
+		</ul>
+
+		<p>Stretch goal:</p>
+		<ul>
+			<li>prevent tooltip from updating too often
+				<ul>
+					<li>1st time update immediately on move</li>
+					<li>next times update only after a given delay (500ms)</li>
+					<li>the last time after the mouse stopped</li>
+				</ul>
+			</li>
+			<li>implement delay behaviour as a decorator (throttle)</li>
+			<li><b>тут не понял:</b> create an data-attributes to activate the tooltip
+				and set required text and delay by just adding these attributes</li>
+		</ul>
+	</div>
+
+	<div class="tooltipHandler">
+		<span class="tooltip"></span>
+    </div>
+  </body>
+</html>
