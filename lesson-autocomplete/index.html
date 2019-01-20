@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Autocomplete</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./lib/style.css" />
+    <script src="./lib/script.js" defer></script>
+  </head>
+
+  <body>
+    <div id="solution">
+      <div class="material-select">
+        <div class="material-select__selector-wrapper">
+          <label for="tags" class="material-select__label"
+            >Programming languages:
+          </label>
+          <span class="material-select__selected-items"> </span>
+          <input id="tags" class="material-select__input" />
+          <button class="material-select__btn-send">Send</button>
+        </div>
+
+        <ul class="material-select__autocomplete-suggestions hidden"></ul>
+      </div>
+    </div>
+  </body>
+</html>

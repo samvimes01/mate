@@ -1,0 +1,78 @@
+.material-select__selector-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid steelblue;
+}
+
+.material-select__label {
+  position: absolute;
+  font-size: 15px;
+  flex-basis: 100%;
+  margin-bottom: 5px;
+  transition: font-size 250ms linear;
+}
+
+.material-select__selected-items {
+  user-select: none;
+}
+
+.material-select__input {
+  border: none;
+  padding: 5px 8px;
+  flex: 1 1 auto;
+}
+
+.material-select__input:focus {
+  border-bottom: 2px solid darkblue;
+  background-color: lightyellow;
+}
+
+.material-select__input:focus {
+  outline: none;
+}
+
+.material-select__autocomplete-suggestions {
+  border: 1px dashed #888;
+  margin: 0;
+  padding: 5px 15px;
+}
+
+.material-select__autocomplete-suggestion {
+  cursor: pointer;
+  list-style: none;
+}
+
+.material-select__autocomplete-suggestion:focus {
+  outline: none;
+  background: #eee;
+}
+
+.material-select__autocomplete-suggestion:hover {
+  background: #ddd;
+}
+
+.mat-chip {
+  padding: 5px 10px;
+  border-radius: 25px;
+  background: #ddd;
+}
+
+.mat-chip__close-btn {
+  cursor: pointer;
+  position: relative;
+  bottom: 20%;
+  left: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 3px;
+  border-radius: 50%;
+  background: #aaa;
+}
+
+.material-select__btn-send {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
