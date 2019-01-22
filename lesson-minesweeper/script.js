@@ -25,24 +25,27 @@ let minesPositions;
 let openedCells;
 let leftFlagsCounter = initGridSize;
 let size;
+let firstClick;
 
 start.addEventListener('click', buildField);
-field.addEventListener('contextmenu', markCell);
 
 
 function buildField() {
   field.addEventListener('click', revealCell);
+  field.addEventListener('contextmenu', markCell);
 
   size = +((input.value <= maxGridSize && input.value > 5) ? input.value : (input.value > maxGridSize) ? maxGridSize : input.value);
+
+  firstClick = true;
   minesPositions = [];
+  minesAmount = 0;
+  cellsArray = [];
   openedCells = new Set();
+  fieldInfo.textContent = '';
   clearDom(field);
   setGridSize(size);
 
-  setMines(size);
-  changeFlags(minesAmount);
-
-  for (let i = 0; i < cellsArray.length; i++) {
+  for (let i = 0; i < size * size; i++) {
     const elem = `<span data-index = "${i}" class = "minesweeper__field-cell"></span>`;
     field.insertAdjacentHTML('beforeEnd', elem);
   }
@@ -53,12 +56,20 @@ function buildField() {
 function revealCell(event) {
   const cell = event.target.closest(cellSelector);
   if (!cell) return;
+
+  if (firstClick) {
+    setMines(size);
+    changeFlags(minesAmount);
+    firstClick = false;
+  }
+
   const value = getCellValue(cell);
 
   if (value === '*') {
     for (const cell of field.children) {
       cell.textContent = getCellValue(cell) === 0 ? '' : getCellValue(cell);
       cell.style.color = '#000';
+      checkWin(true);
     }
     cell.style.color = 'red';
     field.removeEventListener('click', revealCell);
@@ -78,7 +89,7 @@ function revealCell(event) {
 function markCell(event) {
   event.preventDefault();
   const cell = event.target.closest(cellSelector);
-  if (!cell) return;
+  if (!cell || firstClick) return;
   const val = cell.textContent;
   if (val === '') {
     if (leftFlagsCounter === 0) return;
@@ -193,11 +204,18 @@ function openAdjacentCells(cell) {
   checkWin();
 }
 
-function checkWin() {
-  if (cellsArray.length - openedCells.size === minesAmount) {
-    field.removeEventListener('click', revealCell);
-    fieldInfo.textContent = 'You win!!!';
+function checkWin(loose = false) {
+  if (!loose && cellsArray.length - openedCells.size !== minesAmount)  return;
+
+  field.removeEventListener('click', revealCell);
+  field.removeEventListener('contextmenu', markCell);
+
+  if (loose) {
+    fieldInfo.textContent = 'Booom!!! :-(';
+    return;
   }
+
+  fieldInfo.textContent = 'You win!!!';
 }
 
 function getCellValue(cell) {
